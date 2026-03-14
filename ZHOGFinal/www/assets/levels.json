@@ -19,7 +19,7 @@
         { "image": "assets/cutscenes/IntroPart3.png", "text": "Your supplies are nearly gone. It's time to leave. Search your home one last time before heading out." }
       ],
       "cutsceneAfter": [
-        { "image": "assets/levels/ZombieINStreet.png", "text": "With your bag packed, you take one last look at your home. Time to go." }
+        { "image": "assets/levels/ZombieDogStreet.png", "text": "With your bag packed, you take one last look at your home. Time to go." }
       ]
     },
     {
@@ -56,7 +56,7 @@
       },
       "cutsceneBefore": [
         { "image": "assets/levels/Isolation.png", "text": "Escaping through the woods seemed like a good idea... until you heard them following." },
-        { "image": "assets/levels/Isolation.png", "text": "Running blindly, you trip and your bag goes flying. Your supplies scatter everywhere!" }
+        { "image": "assets/cutscenes/IntroPart3.png", "text": "Running blindly, you trip and your bag goes flying. Your supplies scatter everywhere!" }
       ]
     },
     {
@@ -105,7 +105,7 @@
         { "image": "assets/levels/ZombieINHouseUPStairs.png", "text": "The upstairs bedrooms might have medical supplies and food. Be thorough." }
       ],
       "cutsceneAfter": [
-        { "image": "assets/levels/HauntedStreets.png", "text": "With the house cleared, you prepare to move on. The city center might have a safe zone." }
+        { "image": "assets/levels/ZombieSpookyHouse.png", "text": "With the house cleared, you prepare to move on. The city center might have a safe zone." }
       ]
     },
     {
@@ -136,7 +136,7 @@
       "proceedRequirements": { "minFound": 12, "inventory": { "Food": 2, "Water": 2, "Supplies": 2 } },
       "encounter": null,
       "cutsceneBefore": [
-        { "image": "assets/levels/ZombieINSchool.png", "text": "The school cafeteria might have food. The nurse's office might have medical supplies." },
+        { "image": "assets/levels/HighSchoolExterior.png", "text": "The school cafeteria might have food. The nurse's office might have medical supplies." },
         { "image": "assets/levels/ZombieINSchool.png", "text": "Search carefully. You're getting closer to the safe zone." }
       ]
     },
@@ -176,15 +176,17 @@
         "failReason": "You collapsed from exhaustion just steps from safety. So close..."
       },
       "cutsceneBefore": [
-        { "image": "assets/levels/ZombieDogStreet.png", "text": "You can see the walls of the safe zone ahead. Soldiers patrol the perimeter." },
+        { "image": "assets/levels/SafeZoneArrival.png", "text": "You can see the walls of the safe zone ahead. Soldiers patrol the perimeter." },
+        { "image": "assets/cutscenes/GoodFinish/GoodFinalEnding2.png", "text": "Almost there... just a little further." },
+        { "image": "assets/levels/ZombieDog1.png", "text": "The infected sense your presence. Move quickly!" },
         { "image": "assets/levels/ZombieDogStreet.png", "text": "One last search for supplies, then freedom awaits!" }
       ]
     }
   ],
   "endings": {
     "good": {
-      "images": ["assets/cutscenes/GoodFinish/GoodFinalEnd.png"],
-      "text": ["Congratulations! You made it to the safe zone!", "After months of survival, you finally found safety.", "The military welcomes you in. Your journey is over... for now.", "THE END - Thanks for playing!"]
+      "images": ["assets/cutscenes/GoodFinish/GoodFinalEnding1.png", "assets/cutscenes/GoodFinish/GoodFinalEnd.png", "assets/cutscenes/GoodFinish/GoodFinalEnd.png"],
+      "text": ["The soldiers rush to help you. You made it!", "After months of survival, you finally found safety. Welcome to the safe zone.", "THE END - Thanks for playing!"]
     },
     "death": {
       "images": ["assets/cutscenes/DeathFinish/DeathPart1Starving.png"],

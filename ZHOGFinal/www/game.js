@@ -192,22 +192,9 @@
   
   function resizeCanvas() {
     const container = canvas.parentElement;
-    const maxWidth = container.clientWidth;
-    const maxHeight = window.innerHeight - 100;
-    
-    let aspect = 16 / 9;
-    if (state.bgImage?.naturalWidth && state.bgImage?.naturalHeight) {
-      aspect = state.bgImage.naturalWidth / state.bgImage.naturalHeight;
-    }
-    
-    let width = maxWidth;
-    let height = Math.round(width / aspect);
-    
-    if (height > maxHeight) {
-      height = maxHeight;
-      width = Math.round(height * aspect);
-    }
-    
+    const width = container.clientWidth;
+    const height = window.innerHeight - 100;
+
     canvas.style.width = width + 'px';
     canvas.style.height = height + 'px';
     canvas.width = Math.floor(width * CONFIG.DPR);
