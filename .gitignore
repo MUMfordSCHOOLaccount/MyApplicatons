@@ -1,0 +1,43 @@
+## Repository-wide ignores for MyApplicatons
+
+## Visual Studio / .NET
+.vs/
+*.user
+*.suo
+*.userosscache
+bin/
+obj/
+*.exe
+*.pdb
+*.dll
+*.cache
+
+## Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+## IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+## OS
+.DS_Store
+Thumbs.db
+desktop.ini
+Desktop.ini
+
+## Temporary files
+*.tmp
+*.temp
+*.log
+
+## Archives (keep source, not archives)
+*.zip
+*.7z
+*.rar
+
+## User data
+leaderboard.txt
