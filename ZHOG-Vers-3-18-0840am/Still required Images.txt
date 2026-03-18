@@ -1,0 +1,115 @@
+Still required Images
+
+No first aid
+1 of 1 Bleed to death with no First Aid
+
+Death by Zombie Dog 
+1 of 3 Camera over head lookin straight down on player, dog eating the players chest
+2 of 3 a little more zoomed in on players face same camera angle, only now there is 2 dogs eating player
+3 of 3 a little more zoomed in on players face same camera angle, same camera only with 6 dogs, surrounding player,
+
+ Raider Death
+1 of 5 you try to peak from cover with your pistol and are shot dead
+2 of 5 you try to look over cove with your shotgun another raider gets you from your blind side and stabs you to death.
+3 of 5 you rise from behind cover to shoot a raider but a zombie gets close and surprises you, 
+4 of 5 you turn and kill the zombie but the raider shoots you.
+5 of 5 camera, lookin down on player, as a Raider crouches near you and loots your belongings.
+
+
+Intro
+Cutscene into
+Inside your house
+
+Level Intro to level 2 Scene
+Leaving your house and walking through the suburbs
+Level 2 A truck in the street.
+
+Level 2 to level 3 cutscene 
+
+Level 3 Dark Woods
+2 of 4 for Dark woods, on the dark forest road you travel through the night. 
+3a of 4 Image of a walkie talkie on the muddy road in front of you. 
+(after the Body in the woods, an event could be triggered by dice roll) 
+*If triggered, small cut scene finding a walkie talkie on the muddy road.
+
+Secret Level
+Cutscene
+1 of 2 you receive a transmission on the walkie talkie.
+2 of 2 a call for help
+
+Cutscene 
+Event (Choose to help, Lie, Or you can not help and choose to Sit with the stranger
+Images 1 trough 9 needed
+1 of 9 You followed the stranger on the radios directions, and it led you to a small shed in the woods.
+2 of 9 you can see the shed, and you continue to sneak up to it.
+3 of 9 You can peak inside the side window of the shed
+4 of 9 A stranger calls out to you from inside the shed
+6 of 9 He is a big man, lumberjack, the door to the shed is blocked by the numerous dead bodies, He is seriously injured on his leg.
+Event (Choose to help, Lie, Or you can not help and choose to Sit with the stranger
+7 of 9 The man has a serious injury to his leg, he needs your help or he hill die You choose to bandage him with your first aid kit.
+8 of 9 you do not have the first aid kit and you choose to sit with him, so he is not alone when he passes.
+9 of 9 you lie to the man, and keep your first aid kit secret. you leave him to die alone.
+*if 8 is chosen,
+9A When the man passes, you get up to leave and you see a chainsaw on the ground.
+9B you pick up the chainsaw. it is yellow, and shines even in the dark shed, your face is shrouded in shadow, but your teeth reveal the grin on your face, que the Doom Music.
+
+
+Level 3 - 4 CutScene
+The Spooky house
+Level 4 The House in the woods
+6 of 6  house An image inside the house, a zombie on the floor, Stairs to go down on your right, open doors to rooms on your front and left. Zombie in the dark room in front, silhouetted in the darkness. 
+
+Cut scene 4 to 5
+Leaving the woods, entering a city
+1 leaving the woods, an obvious barrier between the woods and the city, HIGH sky shot looking down, showing the scale.
+2 The roads become Concrete, you move between the buildings cautiously.
+You find...
+High School Level 5
+
+
+
+Level 5 to 6 cut scene.
+1 You leave the highschool and you hear some commotion
+2 You hide behind a low wall, there are Raiders in front of you searching some cars.
+3 The Raiders move on and you continue moving when it is safe. (this may trigger a secret event Level5Part5a)
+*If you helped the man, He saves you, but dies in the process. 
+Cutscene Secret
+1 of 6 You slip away after the bandits passed. (This is the normal slide for level 5-6 cutscene Image 3)
+2 of 6 you were so focused on the Bandits, you almost walk right into a zombie
+3 of 6 Just before the zombie bites you, a chain saw cuts through tis neck.
+4 of 6 the stranger you helped earlier saved your life, but a second zombie took him down. 
+5 of 6 you kill the second zombie, but the man is already dead.
+6 of 6 you see his Chainsaw on the ground. (Same scene as 9B from the secret event at level 3)
+
+Leaving from here
+You continue through the city
+Cut Scene 6 - 7
+Level 7 Hospital
+
+
+Cut scene level 7 - 8 
+Level 8 
+
+
+The wall
+
+
+
+Level 8 - 9 Cutscene. The wall
+Level 9 
+The dog.
+*This triggers events. 1a Attack with Chainsaw  1b Attack with shotgun, 1c attack the dog with the pistol.
+2a defeat dog with chainsaw 2b defeat the dog with he shotgun. defeat the dog with the pistol.
+also
+3a You receive a serious injury to the neck from the dog. The injury is serious. you need a first aid kit.
+3b The dog bites your thigh, the injury is serious. you need first aid.
+*The dog defeats you.
+Dog death. 
+1 of 3 The camera is directly over head looking at you, you are laying on your back on the ground, eyes open as a dog eats from your chest. 
+2 of 3 the camera is in the same position, but closer to your face. now a second dog also feasts on you.
+3 of 3 the camera is closer to your face now, but you can see there are now 6 dogs feasting on you body.
+
+
+
+Level
+

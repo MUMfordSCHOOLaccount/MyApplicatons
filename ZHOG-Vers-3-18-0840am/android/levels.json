@@ -1,0 +1,232 @@
+{
+  "story": {
+    "title": "Dead Zone: Escape",
+    "intro": "The outbreak started three months ago. The military tried to contain it, but they failed. Now the cities are overrun, and survival means staying one step ahead of the horde."
+  },
+  "levels": [
+    {
+      "id": 1,
+      "name": "Your Home",
+      "subtitle": "The Last Morning",
+      "photo": "assets/levels/DarkLivingroom.jpg",
+      "totalItems": 15,
+      "quota": { "Weapon": 2, "Food": 3, "Water": 2, "Supplies": 4 },
+      "proceedRequirements": { "minFound": 8, "inventory": { "Weapon": 1, "Food": 2, "Water": 1 } },
+      "encounter": null,
+      "cutsceneBefore": [
+        { "image": "assets/cutscenes/IntroPart1.png", "text": "For months, you've been hiding in your house, surviving on whatever you could find." },
+        { "image": "assets/cutscenes/IntroPart2.png", "text": "The battles between the military and the infected are over. The screams have stopped. Only silence remains." },
+        { "image": "assets/cutscenes/IntroPart3.png", "text": "Your supplies are nearly gone. It's time to leave. Search your home one last time before heading out." }
+      ],
+      "cutsceneAfter": [
+        { "image": "assets/levels/ZombieDogStreet.png", "text": "With your bag packed, you take one last look at your home. Time to go." },
+        { "image": "assets/cutscenes/Level1to2_1.png", "text": "[Placeholder for cutscene 1]" },
+        { "image": "assets/cutscenes/Level1to2_2.png", "text": "[Placeholder for cutscene 2]" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "The Neighborhood",
+      "subtitle": "Streets of the Dead",
+      "photo": "assets/levels/Level02/Level2Truck.png",
+      "totalItems": 15,
+      "quota": { "Weapon": 1, "Food": 2, "Water": 2, "Supplies": 5 },
+      "proceedRequirements": { "minFound": 10, "inventory": { "Weapon": 1, "Food": 1, "Water": 1 } },
+      "encounter": { 
+        "description": "A zombie dog spots you! You need to fight or distract it.", 
+        "requires": { "Weapon": 1 }, 
+        "consume": { "Food": 1 },
+        "failReason": "Without a weapon, you couldn't defend yourself. The zombie dog overwhelmed you."
+      },
+      "cutsceneBefore": [
+        { "image": "assets/levels/ZombieDogStreet.png", "text": "The streets are eerily quiet. Abandoned cars line the road. Something moves in the shadows..." }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "The Dark Woods",
+      "subtitle": "Lost in the Forest",
+      "photo": "assets/levels/Isolation.png",
+      "totalItems": 18,
+      "quota": { "Weapon": 2, "Food": 3, "Water": 3, "Supplies": 5 },
+      "proceedRequirements": { "minFound": 12, "inventory": { "Food": 2, "Water": 2 } },
+      "encounter": {
+        "description": "You stumble and drop your backpack while running! Search for your scattered supplies.",
+        "requires": {},
+        "consume": { "Supplies": 2 },
+        "failReason": "You couldn't find enough supplies to continue."
+      },
+      "cutsceneBefore": [
+        { "image": "assets/levels/Isolation.png", "text": "Escaping through the woods seemed like a good idea... until you heard them following." },
+        { "image": "assets/cutscenes/IntroPart3.png", "text": "Running blindly, you trip and your bag goes flying. Your supplies scatter everywhere!" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Abandoned House",
+      "subtitle": "The Spooky Manor",
+      "photo": "assets/levels/ZombieSpookyHouse.png",
+      "totalItems": 18,
+      "quota": { "Weapon": 2, "Food": 2, "Water": 2, "Supplies": 6 },
+      "proceedRequirements": { "minFound": 12, "inventory": { "Weapon": 1, "Supplies": 3 } },
+      "encounter": null,
+      "cutsceneBefore": [
+        { "image": "assets/levels/HouseExteriorPart1.png", "text": "In the distance, you spot an old mansion through the trees. It might have supplies." },
+        { "image": "assets/levels/HouseExteriorPart2.png", "text": "As you approach, the house looms larger. It looks abandoned... but appearances can be deceiving." },
+        { "image": "assets/levels/ZombieSpookyHouse.png", "text": "You need shelter for the night. This will have to do. Search quickly before dark." }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "The Basement",
+      "subtitle": "What Lurks Below",
+      "photo": "assets/levels/ZombieHouseBasement.png",
+      "totalItems": 15,
+      "quota": { "Weapon": 3, "Food": 2, "Water": 2, "Supplies": 4 },
+      "proceedRequirements": { "minFound": 10, "inventory": { "Weapon": 2, "Supplies": 2 } },
+      "encounter": {
+        "description": "You hear scratching from behind a locked door. Something is trapped down here with you!",
+        "requires": { "Weapon": 2 },
+        "consume": { "Weapon": 1 },
+        "failReason": "You didn't have enough weapons to fight off what was in the basement."
+      },
+      "cutsceneBefore": [
+        { "image": "assets/levels/ZombieHouseBasement.png", "text": "There must be supplies in the basement. You descend into the darkness..." }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Upstairs",
+      "subtitle": "The Upper Floors",
+      "photo": "assets/levels/ZombieINHouseUPStairs.png",
+      "totalItems": 16,
+      "quota": { "Weapon": 1, "Food": 3, "Water": 3, "Supplies": 5 },
+      "proceedRequirements": { "minFound": 11, "inventory": { "Food": 3, "Water": 2 } },
+      "encounter": null,
+      "cutsceneBefore": [
+        { "image": "assets/levels/ZombieINHouseUPStairs.png", "text": "The upstairs bedrooms might have medical supplies and food. Be thorough." }
+      ],
+      "cutsceneAfter": [
+        { "image": "assets/levels/ZombieSpookyHouse.png", "text": "With the house cleared, you prepare to move on. The city center might have a safe zone." }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Haunted Streets",
+      "subtitle": "Through the City",
+      "photo": "assets/levels/HauntedStreets.png",
+      "totalItems": 18,
+      "quota": { "Weapon": 2, "Food": 2, "Water": 2, "Supplies": 6 },
+      "proceedRequirements": { "minFound": 13, "inventory": { "Weapon": 1, "Food": 2, "Water": 2 } },
+      "encounter": {
+        "description": "A horde blocks the main road! You need to find another way through.",
+        "requires": { "Supplies": 3 },
+        "consume": { "Supplies": 2 },
+        "failReason": "Without enough supplies to create a distraction, the horde caught up to you."
+      },
+      "cutsceneBefore": [
+        { "image": "assets/levels/HauntedStreets.png", "text": "The city streets are a maze of burned cars and debris. Every shadow could hide danger." }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "The School",
+      "subtitle": "Learning Center",
+      "photo": "assets/levels/ZombieINSchool.png",
+      "totalItems": 17,
+      "quota": { "Weapon": 2, "Food": 3, "Water": 3, "Supplies": 5 },
+      "proceedRequirements": { "minFound": 12, "inventory": { "Food": 2, "Water": 2, "Supplies": 2 } },
+      "encounter": null,
+      "cutsceneBefore": [
+        { "image": "assets/levels/HighSchoolExterior.png", "text": "The school cafeteria might have food. The nurse's office might have medical supplies." },
+        { "image": "assets/levels/ZombieINSchool.png", "text": "Search carefully. You're getting closer to the safe zone." }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "The Hospital",
+      "subtitle": "Field of the Fallen",
+      "photo": "assets/levels/ZombieINHospital.png",
+      "totalItems": 20,
+      "quota": { "Weapon": 2, "Food": 2, "Water": 3, "Supplies": 8 },
+      "proceedRequirements": { "minFound": 15, "inventory": { "Weapon": 1, "Food": 2, "Water": 2, "Supplies": 4 } },
+      "encounter": {
+        "description": "Infected patients roam the halls. You'll need everything you have to get through.",
+        "requires": { "Weapon": 1, "Supplies": 2 },
+        "consume": { "Weapon": 1, "Food": 1, "Water": 1 },
+        "failReason": "The hospital was overrun. Without proper weapons and supplies, you couldn't make it through."
+      },
+      "cutsceneBefore": [
+        { "image": "assets/levels/HospitalExterior2.png", "text": "I see a hospital in the distance. The military used it as a staging area. There should be supplies..." },
+        { "image": "assets/levels/HospitalExterior3.png", "text": "As you get closer, you see the devastation. Bodies everywhere. This won't be easy." },
+        { "image": "assets/levels/ZombieINHospital.png", "text": "Inside the hospital entrance. The infected are here... this is the most dangerous place yet." }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "The Safe Zone",
+      "subtitle": "Journey's End",
+      "photo": "assets/levels/ZombieDogStreet.png",
+      "totalItems": 12,
+      "quota": { "Weapon": 1, "Food": 2, "Water": 2, "Supplies": 3 },
+      "proceedRequirements": { "minFound": 10 },
+      "encounter": {
+        "description": "The safe zone gate is just ahead! Make one final push!",
+        "requires": { "Food": 1, "Water": 1 },
+        "consume": {},
+        "successEnding": true,
+        "failReason": "You collapsed from exhaustion just steps from safety. So close..."
+      },
+      "cutsceneBefore": [
+        { "image": "assets/levels/SafeZoneArrival.png", "text": "You can see the walls of the safe zone ahead. Soldiers patrol the perimeter." },
+        { "image": "assets/cutscenes/GoodFinish/GoodFinalEnding2.png", "text": "Almost there... just a little further." },
+        { "image": "assets/levels/ZombieDog1.png", "text": "The infected sense your presence. Move quickly!" },
+        { "image": "assets/levels/ZombieDogStreet.png", "text": "One last search for supplies, then freedom awaits!" }
+      ]
+    }
+  ],
+  "endings": {
+    "finished": {
+      "images": [
+        "assets/cutscenes/FinishedEnding/Ending1.png",
+        "assets/cutscenes/FinishedEnding/Ending2.png",
+        "assets/cutscenes/FinishedEnding/Ending3.png",
+        "assets/cutscenes/FinishedEnding/Ending4.png",
+        "assets/cutscenes/FinishedEnding/Ending5.png",
+        "assets/cutscenes/FinishedEnding/Ending6.png",
+        "assets/cutscenes/FinishedEnding/Ending7.png",
+        "assets/cutscenes/FinishedEnding/Ending8.png",
+        "assets/cutscenes/FinishedEnding/Ending9.png"
+      ],
+      "text": [
+        "[Placeholder for story 1]",
+        "[Placeholder for story 2]",
+        "[Placeholder for story 3]",
+        "[Placeholder for story 4]",
+        "[Placeholder for story 5]",
+        "[Placeholder for story 6]",
+        "[Placeholder for story 7]",
+        "[Placeholder for story 8]",
+        "[Placeholder for story 9]"
+      ]
+    },
+    "good": {
+      "images": ["assets/cutscenes/GoodFinish/GoodFinalEnding1.png", "assets/cutscenes/GoodFinish/GoodFinalEnd.png", "assets/cutscenes/GoodFinish/GoodFinalEnd.png"],
+      "text": ["The soldiers rush to help you. You made it!", "After months of survival, you finally found safety. Welcome to the safe zone.", "THE END - Thanks for playing!"]
+    },
+    "death": {
+      "images": ["assets/cutscenes/DeathFinish/DeathPart1Starving.png"],
+      "text": ["Your journey has come to an end.", "In this world, one wrong move means death.", "But perhaps another survivor will succeed where you failed..."]
+    },
+    "zombie": {
+      "images": [
+        "assets/cutscenes/ZombieFinish/ZombieEndingPart1.png",
+        "assets/cutscenes/ZombieFinish/ZombieEndingPart2.png",
+        "assets/cutscenes/ZombieFinish/ZombieEndingPart3.png",
+        "assets/cutscenes/ZombieFinish/ZombieEndingPart4.png",
+        "assets/cutscenes/ZombieFinish/ZombieEndingPart5.png"
+      ],
+      "text": ["The infection spreads through your body...", "Your thoughts grow hazy...", "Hunger... only hunger remains...", "You are no longer human.", "GAME OVER"]
+    }
+  }
+}
