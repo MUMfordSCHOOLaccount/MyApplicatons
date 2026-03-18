@@ -54,18 +54,18 @@
     isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
     isCapacitor: typeof window !== 'undefined' && window.Capacitor?.isNativePlatform?.(),
     DPR: Math.max(1, window.devicePixelRatio || 1),
-    
+
     // Gameplay settings
     CLICK_TOLERANCE: 0, // Set dynamically based on device
     ITEM_MIN_DISTANCE: 0,
     HINT_DURATION_MS: 5000,
     AD_SECONDS: 15,
-    
+
     // Display
     SHOW_INTRO: true,
     DEBUG_MODE: false
   };
-  
+
   // Adjust for mobile - slightly larger touch targets
   CONFIG.CLICK_TOLERANCE = CONFIG.isMobile ? 28 : 20;
   CONFIG.ITEM_MIN_DISTANCE = CONFIG.isMobile ? 40 : 35;
@@ -91,7 +91,12 @@
     },
     devModeVisible: false,
     introCancelled: false
+    ,
+    backpackCapacity: 12
   };
+
+  // Persistent items across playthroughs (names)
+  state.persistentItems = new Set();
 
   // ============================================
   // CATEGORIES
@@ -109,7 +114,7 @@
   // ============================================
   const ITEM_POOL = {
     weapons: [
-      { name: 'Chainsaw', iconPath: 'assets/icons/WeaponObjects/ChainSaw.png', category: CATEGORY.WEAPON, rarity: 0.25 },
+      { name: 'Chainsaw', iconPath: 'assets/secrets/secretitems/ChainSaw.png', category: CATEGORY.WEAPON, rarity: 0.25, size: 2 },
       { name: 'Fire Axe', iconPath: 'assets/icons/WeaponObjects/FiremansAxe.png', category: CATEGORY.WEAPON, rarity: 0.5 },
       { name: 'Pistol', iconPath: 'assets/icons/WeaponObjects/glock.png', category: CATEGORY.WEAPON, rarity: 0.5 },
       { name: 'Crossbow', iconPath: 'assets/icons/WeaponObjects/crossbow.png', category: CATEGORY.WEAPON, rarity: 0.6 },
@@ -372,8 +377,19 @@
         resolve(tempCanvas);
       };
       img.onerror = () => {
-        iconCache.set(iconPath, null);
-        resolve(null);
+        // create a visible placeholder canvas for missing/0kb images
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = 64;
+        tempCanvas.height = 64;
+        const tctx = tempCanvas.getContext('2d');
+        tctx.fillStyle = '#222';
+        tctx.fillRect(0,0,64,64);
+        tctx.fillStyle = '#fff';
+        tctx.font = '12px sans-serif';
+        tctx.textAlign = 'center';
+        tctx.fillText('Placeholder', 32, 34);
+        iconCache.set(iconPath, tempCanvas);
+        resolve(tempCanvas);
       };
       img.src = getBasePath() + iconPath;
     });
@@ -401,37 +417,44 @@
   }
 
   async function generateItems(rng, levelConfig) {
-    const totalItems = levelConfig?.totalItems || 15;
-    const quota = levelConfig?.quota || { Weapon: 2, Food: 2, Water: 2, Supplies: 5 };
-    
-    const selectedItems = [];
-    
-    // Pick items by category quota
-    if (quota.Weapon) {
-      selectedItems.push(...pickItemsWithRarity(ITEM_POOL.weapons, rng, quota.Weapon));
+    // New behavior: single weighted pool, allow repeats, simpler limits
+    const displayLimit = levelConfig?.displayLimit || 15; // number of items shown
+
+    // Build weighted pools with desired overall probabilities
+    const pool = [];
+
+    // Supplies are very common; make many supply entries
+    for (const s of ITEM_POOL.supplies) {
+      const weight = s.name === 'Health Kit' ? 0.04 : 1.0; // health kit ~4%
+      const copies = Math.max(1, Math.round(weight * 100));
+      for (let i = 0; i < copies; i++) pool.push(s);
     }
-    if (quota.Food) {
-      selectedItems.push(...pickItemsWithRarity(ITEM_POOL.food, rng, quota.Food));
+
+    // Weapons are rare overall (approx 10% of pool)
+    for (const w of ITEM_POOL.weapons) {
+      const weight = 0.1 * (w.rarity || 1);
+      const copies = Math.max(1, Math.round(weight * 10));
+      for (let i = 0; i < copies; i++) pool.push(w);
     }
-    if (quota.Water) {
-      selectedItems.push(...pickItemsWithRarity(ITEM_POOL.water, rng, quota.Water));
+
+    // Food and water moderate
+    for (const f of ITEM_POOL.food) {
+      const copies = Math.max(1, Math.round((f.rarity || 0.5) * 10));
+      for (let i = 0; i < copies; i++) pool.push(f);
     }
-    if (quota.Supplies || quota.Misc) {
-      const supplyCount = (quota.Supplies || 0) + (quota.Misc || 0);
-      selectedItems.push(...pickItemsWithRarity(ITEM_POOL.supplies, rng, supplyCount));
+    for (const w of ITEM_POOL.water) {
+      const copies = Math.max(1, Math.round((w.rarity || 0.5) * 10));
+      for (let i = 0; i < copies; i++) pool.push(w);
     }
-    
-    // Fill remaining slots with random items
-    const allItems = [...ITEM_POOL.weapons, ...ITEM_POOL.food, ...ITEM_POOL.water, ...ITEM_POOL.supplies];
-    while (selectedItems.length < totalItems) {
-      const remaining = allItems.filter(item => 
-        !selectedItems.some(s => s.name === item.name)
-      );
-      if (remaining.length === 0) break;
-      selectedItems.push(...pickItemsWithRarity(remaining, rng, 1));
+
+    // Pick displayLimit items allowing repeats
+    const picked = [];
+    for (let i = 0; i < displayLimit; i++) {
+      const idx = Math.floor(rng() * pool.length);
+      picked.push(pool[idx]);
     }
-    
-    return selectedItems;
+
+    return picked;
   }
 
   async function placeItems(rng, pickedItems) {
@@ -593,22 +616,42 @@
   // BACKPACK SYSTEM
   // ============================================
   
+  // Add item to backpack, respecting item size and total capacity
   function addToBackpack(item) {
     const cat = item.category || CATEGORY.MISC;
     if (!state.backpack[cat]) state.backpack[cat] = [];
-    
+    // compute size usage and enforce capacity
+    const itemSize = item.size || 1;
+   const backpackCapacity = state.backpackCapacity || 12;
+    function backpackUsed() {
+      let used = 0;
+      for (const c of Object.values(state.backpack)) {
+        for (const it of c) used += (it.size || 1) * (it.count || 1);
+      }
+      return used;
+    }
+
+    if (backpackUsed() + itemSize > (state.backpackCapacity || 12)) {
+      // cannot add, maybe show a brief flash or console
+      console.warn('Cannot add to backpack, not enough capacity');
+      return false;
+    }
+
     if (item.stackable) {
       const existing = state.backpack[cat].find(e => e.name === item.name);
       if (existing) {
         existing.count = (existing.count || 1) + 1;
       } else {
-        state.backpack[cat].push({ name: item.name, count: 1 });
+        // store size info for capacity tracking
+        state.backpack[cat].push({ name: item.name, count: 1, size: item.size || 1 });
       }
     } else {
-      state.backpack[cat].push({ name: item.name, count: 1 });
+      state.backpack[cat].push({ name: item.name, count: 1, size: item.size || 1 });
+      state.backpackCapacity = 12; // Ensure backpack capacity is present
     }
     
     saveGame();
+    return true;
   }
 
   function countInBackpack(category) {
@@ -659,6 +702,11 @@
     }
     
     html += '</div>';
+
+    // show capacity used / total
+    const used = Object.values(state.backpack).flat().reduce((s, it) => s + ((it.size || 1) * (it.count || 1)), 0);
+    html += `<div class="bp-row" style="margin-top:8px; font-size:12px;"><span class="bp-label">Capacity: ${used}/${state.backpackCapacity || 12}</span></div>`;
+
     elements.backpackUI.innerHTML = html;
   }
 
@@ -723,12 +771,28 @@
           }
           if (opt.addItem) {
             // addItem expected { category, name }
-            addToBackpack({ name: opt.addItem.name, category: opt.addItem.category });
+            // find full item definition so size and other properties are preserved
+            const allPool = [...ITEM_POOL.weapons, ...ITEM_POOL.food, ...ITEM_POOL.water, ...ITEM_POOL.supplies];
+            const def = allPool.find(i => i.name === opt.addItem.name);
+            if (def) {
+              addToBackpack(def);
+              if (def.name === 'Chainsaw' || def.name === 'Health Kit') state.persistentItems.add(def.name);
+            } else {
+              addToBackpack({ name: opt.addItem.name, category: opt.addItem.category, size: opt.addItem.size || 1 });
+              if (opt.addItem.name === 'Chainsaw' || opt.addItem.name === 'Health Kit') state.persistentItems.add(opt.addItem.name);
+            }
           }
 
           // Play any cutscenes for this branch
           if (opt.cutsceneAfter?.length > 0) {
             await showCutscenes(opt.cutsceneAfter);
+          }
+
+          // Handle death option (choice causes player to die)
+          if (opt.die) {
+            showDeath(opt.deathReason || 'You were left to die.');
+            resolve(opt.id);
+            return;
           }
 
           // Move to next level if specified (or stay)
@@ -950,10 +1014,10 @@
     state.items = await placeItems(rng, pickedItems);
     state.foundCount = 0;
     
-    // Dice roll event: small chance to trigger secret walkie event in level 3
+    // Dice roll event: very small chance (1/100) to trigger secret walkie event in level 3
     if (state.level === 3) {
-      const roll = Math.floor(rng() * 6) + 1; // 1-6
-      if (roll === 6) {
+      const roll = Math.floor(rng() * 100) + 1; // 1-100
+      if (roll === 1) {
         // Trigger secret branch: find walkie
         const scenes = [
           { image: 'assets/cutscenes/Level3/Level3Part3a.png', text: 'You find a small walkie talkie lying on the muddy road.' },
@@ -967,15 +1031,21 @@
         const hasMed = backpackHasItem(CATEGORY.SUPPLIES, 'Health Kit') || backpackHasItem(CATEGORY.SUPPLIES, 'First Aid Kit');
 
         if (hasMed) {
-          options.push({ id: 'help', text: 'Help the stranger (use Health Kit)', consumeSpecific: { category: CATEGORY.SUPPLIES, name: 'Health Kit', amount: 1 }, cutsceneAfter: [ { image: 'assets/cutscenes/Secret/SecretCutScene/Scene1/7.png', text: 'You bandage the man. He thanks you.' } ], nextLevel: state.level });
-          options.push({ id: 'lie', text: 'Lie and leave (keep Health Kit)', cutsceneAfter: [ { image: 'assets/cutscenes/Secret/SecretCutScene/Scene1/9c.png', text: 'You lie and leave. You feel a pang of guilt.' } ], nextLevel: state.level });
+          // Neutral choice texts so player doesn't know consequences
+          options.push({ id: 'help', text: 'Offer assistance', consumeSpecific: { category: CATEGORY.SUPPLIES, name: 'Health Kit', amount: 1 }, addItem: { category: CATEGORY.WEAPON, name: 'Chainsaw' }, cutsceneAfter: [ { image: 'assets/cutscenes/Secret/SecretCutScene/Scene1/7.png', text: 'You bandage the man. He thanks you.' } ], nextLevel: state.level });
+          options.push({ id: 'lie', text: 'Move on', die: true, deathReason: 'You lied and left the injured man. Later events led to your demise.', cutsceneAfter: [ { image: 'assets/cutscenes/Secret/SecretCutScene/Scene1/9c.png', text: 'You move on without helping.' } ], nextLevel: state.level });
         } else {
-          options.push({ id: 'sit', text: 'Sit with him (no Health Kit)', cutsceneAfter: [ { image: 'assets/cutscenes/Secret/SecretCutScene/Scene1/8.png', text: 'You sit with him. After he passes you find a yellow chainsaw.' }, { image: 'assets/cutscenes/Secret/SecretCutScene/Scene1/9b.png', text: 'You pick up the chainsaw.' } ], addItem: { category: CATEGORY.WEAPON, name: 'Chainsaw' }, nextLevel: state.level });
+          options.push({ id: 'sit', text: 'Stay nearby', cutsceneAfter: [ { image: 'assets/cutscenes/Secret/SecretCutScene/Scene1/8.png', text: 'You sit with him. After he passes you find a yellow chainsaw.' }, { image: 'assets/cutscenes/Secret/SecretCutScene/Scene1/9b.png', text: 'You pick up the chainsaw.' } ], addItem: { category: CATEGORY.WEAPON, name: 'Chainsaw' }, nextLevel: state.level });
         }
 
         // Present choices and await result
         const choice = await presentChoicesDialog(options);
         console.log('Secret branch chosen:', choice);
+        // Handle outcome effects beyond inventory changes
+        if (choice === 'help') {
+          state.savedByMan = true;
+          saveGame();
+        }
       }
     }
 
@@ -1099,6 +1169,7 @@
         level: state.level,
         backpack: state.backpack
       };
+      data.persistent = Array.from(state.persistentItems || []);
       localStorage.setItem('zombieHOG_save', JSON.stringify(data));
     } catch (e) {
       console.error('Failed to save game:', e);
@@ -1112,6 +1183,16 @@
         const data = JSON.parse(raw);
         state.level = data.level || 1;
         state.backpack = data.backpack || state.backpack;
+        if (Array.isArray(data.persistent)) {
+          state.persistentItems = new Set(data.persistent);
+          // If persistent includes Chainsaw or Health Kit, ensure they exist in backpack
+          if (state.persistentItems.has('Chainsaw')) {
+            addToBackpack({ name: 'Chainsaw', category: CATEGORY.WEAPON, size: 2 });
+          }
+          if (state.persistentItems.has('Health Kit')) {
+            addToBackpack({ name: 'Health Kit', category: CATEGORY.SUPPLIES, size: 1 });
+          }
+        }
       }
     } catch (e) {
       console.error('Failed to load save:', e);
