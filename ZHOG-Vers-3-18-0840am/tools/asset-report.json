@@ -1,0 +1,380 @@
+{
+  "generatedAt": "2026-03-18T13:44:23.811Z",
+  "assetDir": "www/assets",
+  "imageCount": 109,
+  "referencedPathsCount": 95,
+  "matched": [
+    {
+      "ref": "assets/cutscenes/BadEndingsDeaths/Starving/DeathPart1Starving.png",
+      "file": "www/assets/cutscenes/BadEndingsDeaths/Starving/DeathPart1Starving.png"
+    },
+    {
+      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart1.png",
+      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart1.png"
+    },
+    {
+      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart2.png",
+      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart2.png"
+    },
+    {
+      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart3.png",
+      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart3.png"
+    },
+    {
+      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart4.png",
+      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart4.png"
+    },
+    {
+      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart5.png",
+      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart5.png"
+    },
+    {
+      "ref": "assets/cutscenes/FinishedEnding/Ending1.png",
+      "file": "www/assets/cutscenes/FinishedEnding/Ending1.png"
+    },
+    {
+      "ref": "assets/cutscenes/FinishedEnding/Ending2.png",
+      "file": "www/assets/cutscenes/FinishedEnding/Ending2.png"
+    },
+    {
+      "ref": "assets/cutscenes/FinishedEnding/Ending3.png",
+      "file": "www/assets/cutscenes/FinishedEnding/Ending3.png"
+    },
+    {
+      "ref": "assets/cutscenes/FinishedEnding/Ending4.png",
+      "file": "www/assets/cutscenes/FinishedEnding/Ending4.png"
+    },
+    {
+      "ref": "assets/cutscenes/FinishedEnding/Ending5.png",
+      "file": "www/assets/cutscenes/FinishedEnding/Ending5.png"
+    },
+    {
+      "ref": "assets/cutscenes/FinishedEnding/Ending6.png",
+      "file": "www/assets/cutscenes/FinishedEnding/Ending6.png"
+    },
+    {
+      "ref": "assets/cutscenes/FinishedEnding/Ending7.png",
+      "file": "www/assets/cutscenes/FinishedEnding/Ending7.png"
+    },
+    {
+      "ref": "assets/cutscenes/FinishedEnding/Ending8.png",
+      "file": "www/assets/cutscenes/FinishedEnding/Ending8.png"
+    },
+    {
+      "ref": "assets/cutscenes/FinishedEnding/Ending9.png",
+      "file": "www/assets/cutscenes/FinishedEnding/Ending9.png"
+    },
+    {
+      "ref": "assets/cutscenes/GoodFinish/GoodFinalEnd1.png",
+      "file": "www/assets/cutscenes/GoodFinish/GoodFinalEnd1.png"
+    },
+    {
+      "ref": "assets/cutscenes/GoodFinish/GoodFinalEnd2.png",
+      "file": "www/assets/cutscenes/GoodFinish/GoodFinalEnd2.png"
+    },
+    {
+      "ref": "assets/cutscenes/Intro/IntroPart1a.png",
+      "file": "www/assets/cutscenes/Intro/IntroPart1a.png"
+    },
+    {
+      "ref": "assets/cutscenes/Intro/IntroPart2a.png",
+      "file": "www/assets/cutscenes/Intro/IntroPart2a.png"
+    },
+    {
+      "ref": "assets/cutscenes/Intro/IntroPart3.png",
+      "file": "www/assets/cutscenes/Intro/IntroPart3.png"
+    },
+    {
+      "ref": "assets/cutscenes/Level2/Level2Part1.png",
+      "file": "www/assets/cutscenes/Level2/Level2Part1.png"
+    },
+    {
+      "ref": "assets/cutscenes/Level2/Level2Part2.png",
+      "file": "www/assets/cutscenes/Level2/Level2Part2.png"
+    },
+    {
+      "ref": "assets/cutscenes/Level4/ZombieSpookyHouse1.png",
+      "file": "www/assets/cutscenes/Level4/ZombieSpookyHouse1.png"
+    },
+    {
+      "ref": "assets/cutscenes/Level4/ZombieSpookyHouse2.png",
+      "file": "www/assets/cutscenes/Level4/ZombieSpookyHouse2.png"
+    },
+    {
+      "ref": "assets/cutscenes/Level4/ZombieSpookyHouse3.png",
+      "file": "www/assets/cutscenes/Level4/ZombieSpookyHouse3.png"
+    },
+    {
+      "ref": "assets/cutscenes/Level4/ZombieSpookyHouse4.png",
+      "file": "www/assets/cutscenes/Level4/ZombieSpookyHouse4.png"
+    },
+    {
+      "ref": "assets/cutscenes/Level6/HighSchoolExterior.png",
+      "file": "www/assets/cutscenes/Level6/HighSchoolExterior.png"
+    },
+    {
+      "ref": "assets/cutscenes/Level7/HospitalExterior1.png",
+      "file": "www/assets/cutscenes/Level7/HospitalExterior1.png"
+    },
+    {
+      "ref": "assets/cutscenes/Level7/HospitalExterior2.png",
+      "file": "www/assets/cutscenes/Level7/HospitalExterior2.png"
+    },
+    {
+      "ref": "assets/icons/FoodObjects/Bacon.png",
+      "file": "www/assets/icons/FoodObjects/Bacon.png"
+    },
+    {
+      "ref": "assets/icons/FoodObjects/Grill.png",
+      "file": "www/assets/icons/FoodObjects/Grill.png"
+    },
+    {
+      "ref": "assets/icons/FoodObjects/hamburger.png",
+      "file": "www/assets/icons/FoodObjects/hamburger.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Binos.png",
+      "file": "www/assets/icons/RandomObjects/Binos.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/BodyArmor.png",
+      "file": "www/assets/icons/RandomObjects/BodyArmor.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Books.png",
+      "file": "www/assets/icons/RandomObjects/Books.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Brick.png",
+      "file": "www/assets/icons/RandomObjects/Brick.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Cement.png",
+      "file": "www/assets/icons/RandomObjects/Cement.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Flashlight.png",
+      "file": "www/assets/icons/RandomObjects/Flashlight.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Hammer.png",
+      "file": "www/assets/icons/RandomObjects/Hammer.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Hammock.png",
+      "file": "www/assets/icons/RandomObjects/Hammock.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/HealthKit.png",
+      "file": "www/assets/icons/RandomObjects/HealthKit.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Ladder.png",
+      "file": "www/assets/icons/RandomObjects/Ladder.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Lantern.png",
+      "file": "www/assets/icons/RandomObjects/Lantern.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/LargePack.png",
+      "file": "www/assets/icons/RandomObjects/LargePack.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/LightBulb.png",
+      "file": "www/assets/icons/RandomObjects/LightBulb.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Lighter.png",
+      "file": "www/assets/icons/RandomObjects/Lighter.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Magizine.png",
+      "file": "www/assets/icons/RandomObjects/Magizine.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Nails.png",
+      "file": "www/assets/icons/RandomObjects/Nails.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Pallett.png",
+      "file": "www/assets/icons/RandomObjects/Pallett.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Screwgun.png",
+      "file": "www/assets/icons/RandomObjects/Screwgun.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Screws.png",
+      "file": "www/assets/icons/RandomObjects/Screws.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/SkillBook.png",
+      "file": "www/assets/icons/RandomObjects/SkillBook.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/SleepingBag.png",
+      "file": "www/assets/icons/RandomObjects/SleepingBag.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Soap.png",
+      "file": "www/assets/icons/RandomObjects/Soap.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/StrongLock.png",
+      "file": "www/assets/icons/RandomObjects/StrongLock.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/Walkie.png",
+      "file": "www/assets/icons/RandomObjects/Walkie.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/WeakLock.png",
+      "file": "www/assets/icons/RandomObjects/WeakLock.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/WoodPlanks.png",
+      "file": "www/assets/icons/RandomObjects/WoodPlanks.png"
+    },
+    {
+      "ref": "assets/icons/RandomObjects/WorkBoots.png",
+      "file": "www/assets/icons/RandomObjects/WorkBoots.png"
+    },
+    {
+      "ref": "assets/icons/WaterObjects/BottleWaterr.png",
+      "file": "www/assets/icons/WaterObjects/BottleWaterr.png"
+    },
+    {
+      "ref": "assets/icons/WaterObjects/Coffee.png",
+      "file": "www/assets/icons/WaterObjects/Coffee.png"
+    },
+    {
+      "ref": "assets/icons/WaterObjects/DirtyWater.png",
+      "file": "www/assets/icons/WaterObjects/DirtyWater.png"
+    },
+    {
+      "ref": "assets/icons/WaterObjects/Expresso.png",
+      "file": "www/assets/icons/WaterObjects/Expresso.png"
+    },
+    {
+      "ref": "assets/icons/WaterObjects/canteen.png",
+      "file": "www/assets/icons/WaterObjects/canteen.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/Bomb.png",
+      "file": "www/assets/icons/WeaponObjects/Bomb.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/Bow.png",
+      "file": "www/assets/icons/WeaponObjects/Bow.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/Broom.png",
+      "file": "www/assets/icons/WeaponObjects/Broom.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/ChainSaw.png",
+      "file": "www/assets/icons/WeaponObjects/ChainSaw.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/CombatAxe.png",
+      "file": "www/assets/icons/WeaponObjects/CombatAxe.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/FiremansAxe.png",
+      "file": "www/assets/icons/WeaponObjects/FiremansAxe.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/Revolver.png",
+      "file": "www/assets/icons/WeaponObjects/Revolver.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/Sledge.png",
+      "file": "www/assets/icons/WeaponObjects/Sledge.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/WW2Rifle.png",
+      "file": "www/assets/icons/WeaponObjects/WW2Rifle.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/combatknife.png",
+      "file": "www/assets/icons/WeaponObjects/combatknife.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/crossbow.png",
+      "file": "www/assets/icons/WeaponObjects/crossbow.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/glock.png",
+      "file": "www/assets/icons/WeaponObjects/glock.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/kitchenknife.png",
+      "file": "www/assets/icons/WeaponObjects/kitchenknife.png"
+    },
+    {
+      "ref": "assets/icons/WeaponObjects/scissors.png",
+      "file": "www/assets/icons/WeaponObjects/scissors.png"
+    },
+    {
+      "ref": "assets/levels/Level01/DarkLivingroom.png",
+      "file": "www/assets/levels/Level01/DarkLivingroom.png"
+    },
+    {
+      "ref": "assets/levels/Level02/Level2Truck.png",
+      "file": "www/assets/levels/Level02/Level2Truck.png"
+    },
+    {
+      "ref": "assets/levels/Level03/Level3DarkWoods.png",
+      "file": "www/assets/levels/Level03/Level3DarkWoods.png"
+    },
+    {
+      "ref": "assets/levels/Level04/ZombieSpookyHouseUpstairs.png",
+      "file": "www/assets/levels/Level04/ZombieSpookyHouseUpstairs.png"
+    }
+  ],
+  "missing": [
+    "assets/cutscenes/GoodFinish/GoodFinalEnd.png",
+    "assets/cutscenes/Level5/Level5Part1.png",
+    "assets/levels.json",
+    "assets/levels/Level05/ZombieHouseBasement.png",
+    "assets/levels/Level06/ZombieINHouseUPStairs.png",
+    "assets/levels/Level07/HauntedStreets.png",
+    "assets/levels/Level08/ZombieINSchool.png",
+    "assets/levels/Level09/ZombieINHospital.png",
+    "assets/levels/Level10/SafeZoneArrival.png",
+    "assets/levels/Level10/ZombieDog1.png",
+    "assets/levels/Level10/ZombieDogStreet.png",
+    "assets/levels/ZombieDogStreet.png",
+    "assets/levels/ZombieINHouseUPStairs.png"
+  ],
+  "unused": [
+    "www/assets/cutscenes/AppIcon.png",
+    "www/assets/cutscenes/GoodFinish/GoodFinalEnd3.png",
+    "www/assets/cutscenes/Intro/IntroPart3a.png",
+    "www/assets/cutscenes/Intro/IntroPart4a.png",
+    "www/assets/cutscenes/Intro/IntroPart5a.png",
+    "www/assets/cutscenes/Intro/IntroPart6a.png",
+    "www/assets/cutscenes/Intro/IntroPart7a.png",
+    "www/assets/cutscenes/Intro/IntroPart8a.png",
+    "www/assets/cutscenes/Level2/Level2Part3.png",
+    "www/assets/cutscenes/Level3/DarkWoods1.png",
+    "www/assets/cutscenes/Level3/DarkWoods3.png",
+    "www/assets/cutscenes/Level3/DarkWoods4.png",
+    "www/assets/cutscenes/Level4/ZombieSpookyHouse5.png",
+    "www/assets/cutscenes/Level4/ZombieSpookyHouse6.png",
+    "www/assets/cutscenes/Level5/Level5Part3.png",
+    "www/assets/cutscenes/Level6/SchoolCafe.png",
+    "www/assets/cutscenes/Level6/SchoolHall.png",
+    "www/assets/cutscenes/Level7/HospitalHall3.png",
+    "www/assets/cutscenes/Level7/HospitalOR4.png",
+    "www/assets/cutscenes/Level8/Level8Part1.png",
+    "www/assets/cutscenes/Level8/Level8Part2.png",
+    "www/assets/cutscenes/Level8/Level8Part3.png",
+    "www/assets/cutscenes/Level8/Level8Part4.png",
+    "www/assets/cutscenes/Secret/Secret Items/ChainSaw.png",
+    "www/assets/cutscenes/Secret/Secret Items/Walkie.png",
+    "www/assets/icons/AppIcon.png",
+    "www/assets/icons/RandomObjects/VideoGame.png"
+  ]
+}
