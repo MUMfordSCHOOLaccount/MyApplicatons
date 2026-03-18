@@ -372,8 +372,20 @@
         resolve(tempCanvas);
       };
       img.onerror = () => {
-        iconCache.set(iconPath, null);
-        resolve(null);
+        // Provide a visible placeholder canvas so missing icons still render
+        const ph = document.createElement('canvas');
+        ph.width = 64;
+        ph.height = 64;
+        const phCtx = ph.getContext('2d');
+        phCtx.fillStyle = '#333';
+        phCtx.fillRect(0, 0, ph.width, ph.height);
+        phCtx.fillStyle = '#e2e8f0';
+        phCtx.font = '12px sans-serif';
+        phCtx.textAlign = 'center';
+        phCtx.textBaseline = 'middle';
+        phCtx.fillText('Icon', ph.width/2, ph.height/2);
+        iconCache.set(iconPath, ph);
+        resolve(ph);
       };
       img.src = getBasePath() + iconPath;
     });
@@ -559,25 +571,44 @@
   function handleClick(evt) {
     if (!state.running || state.adPlaying) return;
     if (evt.type === 'touchend') evt.preventDefault();
-    
+
     const { x, y } = getCanvasCoords(evt);
-    
-    // Find nearest unfound item within tolerance
+
+    // Convert canvas coords to image coords for hit testing
+    const rect = canvas.getBoundingClientRect();
+    const cw = canvas.width / CONFIG.DPR;
+    const ch = canvas.height / CONFIG.DPR;
+    const iw = state.bgImage?.naturalWidth || 1920;
+    const ih = state.bgImage?.naturalHeight || 1080;
+    const scale = view.scale;
+    const dw = iw * scale;
+    const dh = ih * scale;
+    const minX = Math.min(0, cw - dw);
+    const minY = Math.min(0, ch - dh);
+    let ox = view.offsetX; let oy = view.offsetY;
+    if (ox > 0) ox = 0; if (oy > 0) oy = 0;
+    if (ox < minX) ox = minX; if (oy < minY) oy = minY;
+
+    // Map screen point to image coordinates
+    const imgX = (x - (cw - dw) / 2 - ox) / scale;
+    const imgY = (y - (ch - dh) / 2 - oy) / scale;
+
+    // Find nearest unfound item using item.ix/iy
     let target = null;
     let minDist = Infinity;
-    
     for (const item of state.items) {
       if (item.found) continue;
-      const dx = item.x - x;
-      const dy = item.y - y;
+      const dx = item.ix - imgX;
+      const dy = item.iy - imgY;
       const dist = Math.sqrt(dx*dx + dy*dy);
-      
-      if (dist <= CONFIG.CLICK_TOLERANCE && dist < minDist) {
+      // Scale click tolerance into image space
+      const tol = CONFIG.CLICK_TOLERANCE / scale;
+      if (dist <= tol && dist < minDist) {
         minDist = dist;
         target = item;
       }
     }
-    
+
     if (target) {
       target.found = true;
       target.hint = false;
@@ -927,6 +958,19 @@
     await startLevel();
   }
 
+  function quitGame() {
+    // On native platforms, try to close the app. Otherwise just reload the page.
+    if (CONFIG.isCapacitor && window.Capacitor?.App?.exitApp) {
+      try { window.Capacitor.App.exitApp(); } catch(e) { console.warn('exitApp failed', e); window.location.reload(); }
+    } else if (navigator.userAgent.includes('Android')) {
+      // In a WebView on Android there's no standard close, reload to exit to launcher
+      window.location.reload();
+    } else {
+      // Fallback for web: show main menu or reload
+      window.location.reload();
+    }
+  }
+
   // ============================================
   // HINT SYSTEM (with AdMob integration)
   // ============================================
@@ -1073,6 +1117,9 @@
     elements.hintBtn?.addEventListener('click', requestHint);
     elements.restartBtn?.addEventListener('click', restartGame);
     elements.playAgainBtn?.addEventListener('click', restartGame);
+    // Wire quit button (if present)
+    const quitBtn = document.getElementById('quitBtn');
+    quitBtn?.addEventListener('click', quitGame);
     elements.proceedBtn?.addEventListener('click', proceedToNextLevel);
     elements.restartFromDeathBtn?.addEventListener('click', restartGame);
     elements.devMenuBtn?.addEventListener('click', showDevMenu);
