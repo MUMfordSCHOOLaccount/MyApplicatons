@@ -385,6 +385,21 @@
         tctx.fillStyle = '#222';
         tctx.fillRect(0,0,64,64);
         tctx.fillStyle = '#fff';
+        tctx.font = '10px sans-serif';
+        tctx.textAlign = 'center';
+        tctx.fillText('Placeholder', 32, 34);
+        iconCache.set(iconPath, tempCanvas);
+        resolve(tempCanvas);
+      };
+      img.onerror = () => {
+        // create a visible placeholder canvas for missing/0kb images
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = 64;
+        tempCanvas.height = 64;
+        const tctx = tempCanvas.getContext('2d');
+        tctx.fillStyle = '#222';
+        tctx.fillRect(0,0,64,64);
+        tctx.fillStyle = '#fff';
         tctx.font = '12px sans-serif';
         tctx.textAlign = 'center';
         tctx.fillText('Placeholder', 32, 34);
@@ -588,14 +603,34 @@
     // Find nearest unfound item within tolerance
     let target = null;
     let minDist = Infinity;
-    
+
+    // Convert each item's image coords to canvas coords and test distance
+    const w = canvas.width / CONFIG.DPR;
+    const h = canvas.height / CONFIG.DPR;
+    const iw = state.bgImage?.naturalWidth || 1920;
+    const ih = state.bgImage?.naturalHeight || 1080;
+    const scale = view.scale;
+    const dw = iw * scale;
+    const dh = ih * scale;
+    const minX = Math.min(0, w - dw);
+    const minY = Math.min(0, h - dh);
+    let ox = view.offsetX;
+    let oy = view.offsetY;
+    if (ox > 0) ox = 0;
+    if (oy > 0) oy = 0;
+    if (ox < minX) ox = minX;
+    if (oy < minY) oy = minY;
+
     for (const item of state.items) {
       if (item.found) continue;
-      const dx = item.x - x;
-      const dy = item.y - y;
+      const cx = (w - dw) / 2 + ox + (item.ix || item.x || 0) * scale;
+      const cy = (h - dh) / 2 + oy + (item.iy || item.y || 0) * scale;
+      const dx = cx - x;
+      const dy = cy - y;
       const dist = Math.sqrt(dx*dx + dy*dy);
-      
-      if (dist <= CONFIG.CLICK_TOLERANCE && dist < minDist) {
+      const hitRadius = (item.r || 12) * scale + CONFIG.CLICK_TOLERANCE;
+
+      if (dist <= hitRadius && dist < minDist) {
         minDist = dist;
         target = item;
       }
