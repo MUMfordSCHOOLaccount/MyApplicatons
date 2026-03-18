@@ -1,125 +1,9 @@
 {
-  "generatedAt": "2026-03-18T13:44:23.811Z",
+  "generatedAt": "2026-03-18T13:59:59.636Z",
   "assetDir": "www/assets",
-  "imageCount": 109,
-  "referencedPathsCount": 95,
+  "imageCount": 121,
+  "referencedPathsCount": 50,
   "matched": [
-    {
-      "ref": "assets/cutscenes/BadEndingsDeaths/Starving/DeathPart1Starving.png",
-      "file": "www/assets/cutscenes/BadEndingsDeaths/Starving/DeathPart1Starving.png"
-    },
-    {
-      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart1.png",
-      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart1.png"
-    },
-    {
-      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart2.png",
-      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart2.png"
-    },
-    {
-      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart3.png",
-      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart3.png"
-    },
-    {
-      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart4.png",
-      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart4.png"
-    },
-    {
-      "ref": "assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart5.png",
-      "file": "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart5.png"
-    },
-    {
-      "ref": "assets/cutscenes/FinishedEnding/Ending1.png",
-      "file": "www/assets/cutscenes/FinishedEnding/Ending1.png"
-    },
-    {
-      "ref": "assets/cutscenes/FinishedEnding/Ending2.png",
-      "file": "www/assets/cutscenes/FinishedEnding/Ending2.png"
-    },
-    {
-      "ref": "assets/cutscenes/FinishedEnding/Ending3.png",
-      "file": "www/assets/cutscenes/FinishedEnding/Ending3.png"
-    },
-    {
-      "ref": "assets/cutscenes/FinishedEnding/Ending4.png",
-      "file": "www/assets/cutscenes/FinishedEnding/Ending4.png"
-    },
-    {
-      "ref": "assets/cutscenes/FinishedEnding/Ending5.png",
-      "file": "www/assets/cutscenes/FinishedEnding/Ending5.png"
-    },
-    {
-      "ref": "assets/cutscenes/FinishedEnding/Ending6.png",
-      "file": "www/assets/cutscenes/FinishedEnding/Ending6.png"
-    },
-    {
-      "ref": "assets/cutscenes/FinishedEnding/Ending7.png",
-      "file": "www/assets/cutscenes/FinishedEnding/Ending7.png"
-    },
-    {
-      "ref": "assets/cutscenes/FinishedEnding/Ending8.png",
-      "file": "www/assets/cutscenes/FinishedEnding/Ending8.png"
-    },
-    {
-      "ref": "assets/cutscenes/FinishedEnding/Ending9.png",
-      "file": "www/assets/cutscenes/FinishedEnding/Ending9.png"
-    },
-    {
-      "ref": "assets/cutscenes/GoodFinish/GoodFinalEnd1.png",
-      "file": "www/assets/cutscenes/GoodFinish/GoodFinalEnd1.png"
-    },
-    {
-      "ref": "assets/cutscenes/GoodFinish/GoodFinalEnd2.png",
-      "file": "www/assets/cutscenes/GoodFinish/GoodFinalEnd2.png"
-    },
-    {
-      "ref": "assets/cutscenes/Intro/IntroPart1a.png",
-      "file": "www/assets/cutscenes/Intro/IntroPart1a.png"
-    },
-    {
-      "ref": "assets/cutscenes/Intro/IntroPart2a.png",
-      "file": "www/assets/cutscenes/Intro/IntroPart2a.png"
-    },
-    {
-      "ref": "assets/cutscenes/Intro/IntroPart3.png",
-      "file": "www/assets/cutscenes/Intro/IntroPart3.png"
-    },
-    {
-      "ref": "assets/cutscenes/Level2/Level2Part1.png",
-      "file": "www/assets/cutscenes/Level2/Level2Part1.png"
-    },
-    {
-      "ref": "assets/cutscenes/Level2/Level2Part2.png",
-      "file": "www/assets/cutscenes/Level2/Level2Part2.png"
-    },
-    {
-      "ref": "assets/cutscenes/Level4/ZombieSpookyHouse1.png",
-      "file": "www/assets/cutscenes/Level4/ZombieSpookyHouse1.png"
-    },
-    {
-      "ref": "assets/cutscenes/Level4/ZombieSpookyHouse2.png",
-      "file": "www/assets/cutscenes/Level4/ZombieSpookyHouse2.png"
-    },
-    {
-      "ref": "assets/cutscenes/Level4/ZombieSpookyHouse3.png",
-      "file": "www/assets/cutscenes/Level4/ZombieSpookyHouse3.png"
-    },
-    {
-      "ref": "assets/cutscenes/Level4/ZombieSpookyHouse4.png",
-      "file": "www/assets/cutscenes/Level4/ZombieSpookyHouse4.png"
-    },
-    {
-      "ref": "assets/cutscenes/Level6/HighSchoolExterior.png",
-      "file": "www/assets/cutscenes/Level6/HighSchoolExterior.png"
-    },
-    {
-      "ref": "assets/cutscenes/Level7/HospitalExterior1.png",
-      "file": "www/assets/cutscenes/Level7/HospitalExterior1.png"
-    },
-    {
-      "ref": "assets/cutscenes/Level7/HospitalExterior2.png",
-      "file": "www/assets/cutscenes/Level7/HospitalExterior2.png"
-    },
     {
       "ref": "assets/icons/FoodObjects/Bacon.png",
       "file": "www/assets/icons/FoodObjects/Bacon.png"
@@ -315,57 +199,60 @@
     {
       "ref": "assets/icons/WeaponObjects/scissors.png",
       "file": "www/assets/icons/WeaponObjects/scissors.png"
-    },
-    {
-      "ref": "assets/levels/Level01/DarkLivingroom.png",
-      "file": "www/assets/levels/Level01/DarkLivingroom.png"
-    },
-    {
-      "ref": "assets/levels/Level02/Level2Truck.png",
-      "file": "www/assets/levels/Level02/Level2Truck.png"
-    },
-    {
-      "ref": "assets/levels/Level03/Level3DarkWoods.png",
-      "file": "www/assets/levels/Level03/Level3DarkWoods.png"
-    },
-    {
-      "ref": "assets/levels/Level04/ZombieSpookyHouseUpstairs.png",
-      "file": "www/assets/levels/Level04/ZombieSpookyHouseUpstairs.png"
     }
   ],
   "missing": [
-    "assets/cutscenes/GoodFinish/GoodFinalEnd.png",
-    "assets/cutscenes/Level5/Level5Part1.png",
-    "assets/levels.json",
-    "assets/levels/Level05/ZombieHouseBasement.png",
-    "assets/levels/Level06/ZombieINHouseUPStairs.png",
-    "assets/levels/Level07/HauntedStreets.png",
-    "assets/levels/Level08/ZombieINSchool.png",
-    "assets/levels/Level09/ZombieINHospital.png",
-    "assets/levels/Level10/SafeZoneArrival.png",
-    "assets/levels/Level10/ZombieDog1.png",
-    "assets/levels/Level10/ZombieDogStreet.png",
-    "assets/levels/ZombieDogStreet.png",
-    "assets/levels/ZombieINHouseUPStairs.png"
+    "assets/levels.json"
   ],
   "unused": [
     "www/assets/cutscenes/AppIcon.png",
+    "www/assets/cutscenes/BadEndingsDeaths/Starving/DeathPart1Starving.png",
+    "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart1.png",
+    "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart2.png",
+    "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart3.png",
+    "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart4.png",
+    "www/assets/cutscenes/BadEndingsDeaths/ZombieFinish/ZombieEndingPart5.png",
+    "www/assets/cutscenes/FinishedEnding/Ending1.png",
+    "www/assets/cutscenes/FinishedEnding/Ending2.png",
+    "www/assets/cutscenes/FinishedEnding/Ending3.png",
+    "www/assets/cutscenes/FinishedEnding/Ending4.png",
+    "www/assets/cutscenes/FinishedEnding/Ending5.png",
+    "www/assets/cutscenes/FinishedEnding/Ending6.png",
+    "www/assets/cutscenes/FinishedEnding/Ending7.png",
+    "www/assets/cutscenes/FinishedEnding/Ending8.png",
+    "www/assets/cutscenes/FinishedEnding/Ending9.png",
+    "www/assets/cutscenes/GoodFinish/GoodFinalEnd.png",
+    "www/assets/cutscenes/GoodFinish/GoodFinalEnd1.png",
+    "www/assets/cutscenes/GoodFinish/GoodFinalEnd2.png",
     "www/assets/cutscenes/GoodFinish/GoodFinalEnd3.png",
+    "www/assets/cutscenes/Intro/IntroPart1a.png",
+    "www/assets/cutscenes/Intro/IntroPart2a.png",
+    "www/assets/cutscenes/Intro/IntroPart3.png",
     "www/assets/cutscenes/Intro/IntroPart3a.png",
     "www/assets/cutscenes/Intro/IntroPart4a.png",
     "www/assets/cutscenes/Intro/IntroPart5a.png",
     "www/assets/cutscenes/Intro/IntroPart6a.png",
     "www/assets/cutscenes/Intro/IntroPart7a.png",
     "www/assets/cutscenes/Intro/IntroPart8a.png",
+    "www/assets/cutscenes/Level2/Level2Part1.png",
+    "www/assets/cutscenes/Level2/Level2Part2.png",
     "www/assets/cutscenes/Level2/Level2Part3.png",
     "www/assets/cutscenes/Level3/DarkWoods1.png",
     "www/assets/cutscenes/Level3/DarkWoods3.png",
     "www/assets/cutscenes/Level3/DarkWoods4.png",
+    "www/assets/cutscenes/Level4/ZombieSpookyHouse1.png",
+    "www/assets/cutscenes/Level4/ZombieSpookyHouse2.png",
+    "www/assets/cutscenes/Level4/ZombieSpookyHouse3.png",
+    "www/assets/cutscenes/Level4/ZombieSpookyHouse4.png",
     "www/assets/cutscenes/Level4/ZombieSpookyHouse5.png",
     "www/assets/cutscenes/Level4/ZombieSpookyHouse6.png",
+    "www/assets/cutscenes/Level5/Level5Part1.png",
     "www/assets/cutscenes/Level5/Level5Part3.png",
+    "www/assets/cutscenes/Level6/HighSchoolExterior.png",
     "www/assets/cutscenes/Level6/SchoolCafe.png",
     "www/assets/cutscenes/Level6/SchoolHall.png",
+    "www/assets/cutscenes/Level7/HospitalExterior1.png",
+    "www/assets/cutscenes/Level7/HospitalExterior2.png",
     "www/assets/cutscenes/Level7/HospitalHall3.png",
     "www/assets/cutscenes/Level7/HospitalOR4.png",
     "www/assets/cutscenes/Level8/Level8Part1.png",
@@ -375,6 +262,20 @@
     "www/assets/cutscenes/Secret/Secret Items/ChainSaw.png",
     "www/assets/cutscenes/Secret/Secret Items/Walkie.png",
     "www/assets/icons/AppIcon.png",
-    "www/assets/icons/RandomObjects/VideoGame.png"
+    "www/assets/icons/RandomObjects/VideoGame.png",
+    "www/assets/levels/Level01/DarkLivingroom.png",
+    "www/assets/levels/Level02/Level2Truck.png",
+    "www/assets/levels/Level03/Level3DarkWoods.png",
+    "www/assets/levels/Level04/ZombieSpookyHouseUpstairs.png",
+    "www/assets/levels/Level05/ZombieHouseBasement.png",
+    "www/assets/levels/Level06/ZombieINHouseUPStairs.png",
+    "www/assets/levels/Level07/HauntedStreets.png",
+    "www/assets/levels/Level08/ZombieINSchool.png",
+    "www/assets/levels/Level09/ZombieINHospital.png",
+    "www/assets/levels/Level10/SafeZoneArrival.png",
+    "www/assets/levels/Level10/ZombieDog1.png",
+    "www/assets/levels/Level10/ZombieDogStreet.png",
+    "www/assets/levels/ZombieDogStreet.png",
+    "www/assets/levels/ZombieINHouseUPStairs.png"
   ]
 }

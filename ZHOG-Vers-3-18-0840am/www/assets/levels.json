@@ -189,6 +189,55 @@
         { "image": "assets/levels/Level10/ZombieDog1.png", "text": "The infected sense your presence. Move quickly!" },
         { "image": "assets/levels/Level10/ZombieDogStreet.png", "text": "One last search for supplies, then freedom awaits!" }
       ]
+    },
+    {
+      "id": 11,
+      "name": "Secret",
+      "subtitle": "Hidden Transmission",
+      "photo": "assets/levels/Secret/SecretLevel.png",
+      "totalItems": 8,
+      "quota": { "Weapon": 1, "Food": 1, "Water": 1, "Supplies": 2 },
+      "proceedRequirements": { "minFound": 4 },
+      "encounter": null,
+      "cutsceneBefore": [
+        { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/1.png", "text": "You receive a transmission on the walkie talkie." },
+        { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/2.png", "text": "You follow the radio directions toward a small shed." },
+        { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/3.png", "text": "You peek inside a side window of the shed." },
+        { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/4.png", "text": "A stranger calls out from inside the shed." },
+        { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/5.png", "text": "The man is injured and needs help." },
+        { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/6.png", "text": "Choices decide his fate." }
+      ],
+      "choices": [
+        {
+          "id": "help",
+          "text": "Help the stranger (use first aid)",
+          "consume": { "Supplies": 1 },
+          "cutsceneAfter": [
+            { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/7.png", "text": "You bandage the man's leg. He is grateful but weak." },
+            { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/9b.png", "text": "He saves you later but dies in the process." }
+          ],
+          "nextLevel": 11
+        },
+        {
+          "id": "sit",
+          "text": "Sit with him (no first aid)",
+          "cutsceneAfter": [
+            { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/8.png", "text": "You sit with him as he passes. You find a chainsaw on the ground afterwards." },
+            { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/9b.png", "text": "You pick up the chainsaw. It shines in the dark." }
+          ],
+          "addItem": { "category": "Weapon", "name": "Chainsaw" },
+          "nextLevel": 11
+        },
+        {
+          "id": "lie",
+          "text": "Lie and leave (keep first aid)",
+          "cutsceneAfter": [
+            { "image": "assets/cutscenes/Secret/SecretCutScene/Scene1/9c.png", "text": "You lie to the man and leave. You feel the weight of your choice." }
+          ],
+          "nextLevel": 11
+        }
+      ],
+      "cutsceneAfter": []
     }
   ],
   "endings": {
