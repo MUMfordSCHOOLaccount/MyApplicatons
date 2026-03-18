@@ -73,6 +73,9 @@ html, body {
   max-height: 100%;
   border-radius: 4px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  /* Ensure touch events (pinch / pan) are handled by JS on mobile */
+  touch-action: none;
+  -ms-touch-action: none;
 }
 
 .game-sidebar {
